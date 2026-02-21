@@ -1,0 +1,720 @@
+/* =========================================
+   Global Reset & iOS Typography
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    sans-serif;
+  background-color: #f5f5f9;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(285, 100%, 85%, 0.5) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(189, 100%, 85%, 0.6) 0px, transparent 50%),
+    radial-gradient(
+      at 100% 100%,
+      hsla(355, 100%, 85%, 0.5) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 0% 100%, hsla(220, 100%, 85%, 0.6) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: #1d1d1f;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* =========================================
+   Layout Containers
+========================================= */
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px 40px 60px 40px;
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 32px;
+  align-items: start;
+  width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Impactful Typography
+========================================= */
+h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 4px 8px rgba(0, 122, 255, 0.15));
+}
+
+h2 {
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+}
+
+/* =========================================
+   The "Extended Pill" Navbar
+========================================= */
+.navbar {
+  margin: 15px auto 30px auto;
+  width: 95%;
+  max-width: 1520px;
+  border-radius: 24px;
+  padding: 14px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  position: sticky;
+  top: 15px;
+  z-index: 100;
+}
+
+.nav-brand {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: #555;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #007aff;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   Ultra-Glassmorphism Cards
+========================================= */
+.form-container,
+.table-container {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(40px) saturate(150%);
+  -webkit-backdrop-filter: blur(40px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  padding: 32px;
+  border-radius: 24px;
+}
+
+.table-container {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   Form Inputs & Controls
+========================================= */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6e6e73;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #007aff;
+  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* =========================================
+   Buttons
+========================================= */
+button {
+  padding: 12px 24px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#submit-btn {
+  background: #007aff;
+  color: white;
+  flex: 1;
+}
+
+#submit-btn:hover {
+  background: #0063cc;
+  transform: translateY(-1px);
+}
+
+#cancel-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1d1d1f;
+}
+
+/* =========================================
+   Table Design
+========================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+th,
+td {
+  padding: 16px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+}
+
+th {
+  color: #86868b;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td:last-child {
+  white-space: nowrap;
+  width: 1%;
+  text-align: right;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.btn-edit {
+  background-color: rgba(255, 149, 0, 0.1);
+  color: #ff9500;
+  margin-right: 8px;
+}
+
+.btn-delete {
+  background-color: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+}
+
+tr:hover td {
+  background-color: rgba(0, 122, 255, 0.02);
+}
+
+#no-students {
+  text-align: center;
+  color: #86868b;
+  padding: 60px 0;
+}
+
+/* =========================================
+   Ultra-Compact 'No-Scroll' Landing Page
+========================================= */
+.home-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Locks the content to the exact height of the screen minus the navbar */
+  height: calc(100vh - 120px);
+  justify-content: center;
+  padding: 0 20px 20px 20px;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+/* The Main Card with the PNG */
+.hero-main-card {
+  width: 100%;
+  max-width: 850px; /* Scaled down width */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(30px) saturate(150%);
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px; /* Slightly tighter corners */
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.04);
+  margin-bottom: 16px; /* Reduced gap between card and bento boxes */
+}
+
+.hero-image-banner {
+  width: 100%;
+  height: 130px; /* Ultra-slim banner height to save vertical space */
+  background: #e5e5ea;
+}
+
+.hero-image-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text-section {
+  padding: 24px; /* Halved the padding */
+  text-align: center;
+}
+
+/* Scaled Down Typography */
+.badge {
+  background: rgba(0, 122, 255, 0.1);
+  color: #007aff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem; /* Much smaller text */
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.hero-title {
+  font-size: 2.2rem; /* Reduced from 3rem for a compact look */
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 0.95rem; /* Shrunk subtitle */
+  color: #6e6e73;
+  max-width: 500px;
+  margin: 0 auto 20px auto; /* Tighter margins */
+  line-height: 1.4;
+}
+
+/* Scaled Buttons */
+.hero-actions {
+  display: flex;
+  gap: 12px; /* Closer together */
+  justify-content: center;
+}
+
+.btn-primary-hero,
+.btn-secondary-hero {
+  display: flex;
+  align-items: center;
+  padding: 10px 24px; /* Thinner buttons */
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem; /* Smaller button text */
+  transition: all 0.2s ease;
+}
+
+.btn-primary-hero {
+  background: linear-gradient(135deg, #007aff 0%, #0056d2 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 122, 255, 0.2);
+}
+
+.btn-primary-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 122, 255, 0.3);
+}
+
+.btn-secondary-hero {
+  background: rgba(255, 255, 255, 0.6);
+  color: #1d1d1f;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.btn-secondary-hero:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Scaled Down Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px; /* Tighter gap */
+  width: 100%;
+  max-width: 850px; /* Matches the hero card */
+}
+
+.bento-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(30px) saturate(150%);
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 16px; /* Significantly less padding */
+  text-align: left;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.03);
+}
+
+.bento-icon {
+  color: #007aff;
+  margin-bottom: 8px; /* Tighter margin */
+}
+
+/* Scale down the SVG icons */
+.bento-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.bento-card h3 {
+  font-size: 1rem; /* Smaller headers */
+  color: #1d1d1f;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.bento-card p {
+  font-size: 0.85rem; /* Smaller text */
+  color: #6e6e73;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Page Animation */
+.page-animate {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-hero-container {
+    height: auto; /* Reverts to scrolling on very small mobile screens to prevent text overlap */
+  }
+}
+/* =========================================
+   Ultra-Compact 'No-Scroll' Analytics
+========================================= */
+.analytics-no-scroll {
+  /* Locks viewport height to prevent scrolling */
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.analytics-header-compact {
+  margin-bottom: 12px;
+}
+
+.analytics-header-compact h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* TOP ROW STATS */
+.stats-row-compact {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-shrink: 0; /* Prevents stats from being squished */
+}
+
+.stat-card-mini {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  padding: 16px; /* Tighter padding */
+  border-radius: 16px; /* Slightly sharper corners */
+  text-align: left;
+}
+
+.stat-card-mini .stat-label {
+  font-size: 0.75rem;
+  color: #86868b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-card-mini .stat-value {
+  font-size: 1.8rem; /* Scaled down from 2.2rem */
+  font-weight: 800;
+  color: #1d1d1f;
+  line-height: 1;
+}
+
+/* BOTTOM ROW CHARTS */
+.charts-grid-compact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr; /* Two rows for the charts */
+  gap: 16px;
+  flex-grow: 1; /* Tells the grid to take up all remaining space */
+  min-height: 0; /* CRITICAL: Allows children to shrink without overflowing */
+}
+
+.chart-card-compact {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(40px) saturate(150%);
+  -webkit-backdrop-filter: blur(40px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+  padding: 16px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.chart-card-compact h3 {
+  font-size: 1rem;
+  color: #1d1d1f;
+  margin-top: 0;
+  margin-bottom: 8px;
+  flex-shrink: 0; /* Keeps the title from shrinking */
+}
+
+/* This allows the Recharts ResponsiveContainer to size perfectly */
+.chart-wrapper {
+  flex-grow: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.chart-full-width-compact {
+  grid-column: 1 / -1; /* Spans the bottom area chart across both columns */
+}
+
+@media (max-width: 900px) {
+  .analytics-no-scroll {
+    height: auto;
+    overflow: visible;
+  }
+  .stats-row-compact,
+  .charts-grid-compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Page Transitions
+========================================= */
+.page-animate {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 900px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Students Page - Compact & No-Scroll
+========================================= */
+.students-no-scroll {
+  height: calc(100vh - 120px);
+  overflow: hidden;
+}
+
+.students-no-scroll .container {
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+
+.students-no-scroll .dashboard-layout {
+  height: 100%;
+}
+
+/* Tighter Form Elements */
+.compact-form {
+  padding: 24px !important;
+}
+
+.compact-form .form-group {
+  margin-bottom: 12px;
+}
+
+.compact-form .form-group input,
+.compact-form .form-group select {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.compact-form h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+/* Flexible Table Container */
+.table-container-flexible {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Take up the full grid column height */
+  padding: 24px !important;
+  min-height: 0; /* Important for flex children */
+}
+
+.table-scroll-area {
+  flex-grow: 1;
+  overflow-y: auto; /* This allows ONLY the table to scroll vertically */
+  min-height: 0;
+  border-radius: 12px;
+  /* Custom thin scrollbar for webkit browsers */
+}
+
+.table-scroll-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.table-scroll-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-scroll-area::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.sortable-header:hover {
+  color: #007aff;
+}
+
+/* =========================================
+   Sort Control Buttons
+========================================= */
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 4px 6px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.sort-label {
+  font-size: 0.75rem;
+  color: #86868b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 4px 0 8px;
+}
+
+.btn-sort {
+  background: transparent;
+  color: #1d1d1f;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-sort:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.btn-sort.active {
+  background: #007aff;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 122, 255, 0.2);
+}
